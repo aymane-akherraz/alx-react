@@ -1,4 +1,3 @@
-'use strict';
 const $ = require('jquery');
 
 const body = $("body");
