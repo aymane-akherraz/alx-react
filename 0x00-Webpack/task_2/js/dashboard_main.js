@@ -1,5 +1,5 @@
-const $ = require('jquery');
-const _ =  require('lodash');
+import $ from "jquery";
+import _ from "lodash";
 import "../css/main.css";
 
 const body = $("body");
