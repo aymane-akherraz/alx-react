@@ -6,10 +6,20 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
   entry: {
-    header: path.resolve(__dirname, './modules/header/header.js'),
-    body: path.resolve(__dirname, './modules/body/body.js'),
-    footer: path.resolve(__dirname, './modules/footer/footer.js')
-  },
+		header: {
+			import: './modules/header/header.js',
+			dependOn: 'shared',
+		},
+		body: {
+			import: './modules/body/body.js',
+			dependOn: 'shared',
+		},
+		footer: {
+			import: './modules/footer/footer.js',
+			dependOn: 'shared',
+		},
+		shared: 'jquery',
+	},
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "public")
