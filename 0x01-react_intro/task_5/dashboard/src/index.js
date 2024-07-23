@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import GetNotifs from './Notifications';
+import App from './App/App';
+import GetNotifs from './Notifications/Notifications';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
