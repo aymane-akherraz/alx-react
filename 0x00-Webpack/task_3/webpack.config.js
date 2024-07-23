@@ -16,7 +16,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Webpack Output",
+      filename: './index.html',
     }),
     new CleanWebpackPlugin()
   ],
@@ -64,6 +64,7 @@ module.exports = {
 		},
 	},
   devServer: {
+    static: path.join(__dirname, './public'),
     port: 8564,
     open: true,
   },
