@@ -1,11 +1,17 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require("path");
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
-  devtool: 'inline-source-map',
-  entry: {
+  plugins: [
+		new HTMLWebpackPlugin({
+			filename: './index.html',
+		}),
+		new CleanWebpackPlugin(),
+	],
+	devtool: 'inline-source-map',
+	mode: 'development',
+	entry: {
 		header: {
 			import: './modules/header/header.js',
 			dependOn: 'shared',
@@ -21,52 +27,8 @@ module.exports = {
 		shared: 'jquery',
 	},
   output: {
-    filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "public")
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      filename: './index.html',
-    }),
-    new CleanWebpackPlugin()
-  ],
-  module: {
-    rules: [
-      { 
-        test: /\.css$/, 
-        use: ["style-loader", "css-loader"] 
-      },
-      { 
-        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: 'asset/resource',
-        use: [
-          'file-loader',
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              mozjpeg: {
-                progressive: true,
-              },
-              // optipng.enabled: false will disable optipng
-              optipng: {
-                enabled: false,
-              },
-              pngquant: {
-                quality: [0.65, 0.90],
-                speed: 4
-              },
-              gifsicle: {
-                interlaced: false,
-              },
-              // the webp option will enable WEBP
-              webp: {
-                quality: 75
-              }
-            }
-          },
-        ],
-      }
-    ]
+    path: path.resolve(__dirname, 'public'),
+    filename: '[name].bundle.js',
   },
   optimization: {
 		splitChunks: {
@@ -75,7 +37,30 @@ module.exports = {
 	},
   devServer: {
     static: path.join(__dirname, './public'),
-    port: 8564,
     open: true,
+    port: 8564,
   },
+  performance: {
+		maxAssetSize: 1000000,
+	},
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+				test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+				use: [
+					{
+						loader: ['file-loader', 'image-webpack-loader'],
+						options: {
+							bypassOnDebug: true,
+							disable: true,
+						},
+					},
+				],
+			},
+    ]
+  }
 };
