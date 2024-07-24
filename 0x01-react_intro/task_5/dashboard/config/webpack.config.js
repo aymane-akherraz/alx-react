@@ -1,62 +1,54 @@
-const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: 'development',
-  devtool: 'inline-source-map',
+  entry: "./src/index.js",
   output: {
-    filename: "bundle.js"
+    filename: "bundle.js",
   },
+  mode: "development",
   module: {
     rules: [
-      { 
-        test: /\.css$/, 
-        use: ["style-loader", "css-loader"] 
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       },
-      { 
-        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: 'asset/resource',
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        // type: 'asset/resource',
         use: [
-          'file-loader',
+          "file-loader",
           {
-            loader: 'image-webpack-loader',
+            loader: "image-webpack-loader",
             options: {
-              mozjpeg: {
-                progressive: true,
-              },
-              // optipng.enabled: false will disable optipng
-              optipng: {
-                enabled: false,
-              },
-              pngquant: {
-                quality: [0.65, 0.90],
-                speed: 4
-              },
-              gifsicle: {
-                interlaced: false,
-              },
-              // the webp option will enable WEBP
-              webp: {
-                quality: 75
-              }
-            }
+              bypassOnDebug: true, // webpack@1.x
+              disable: true, // webpack@2.x and newer
+            },
           },
         ],
       },
       {
-				test: /\.(js|jsx)$/,
-				exclude: /node_modules/,
-				use: ['babel-loader'],
-			},
-    ]
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"],
+      },
+    ],
   },
   resolve: {
-		extensions: ['*', '.js', '.jsx'],
-	},
-  devServer: {
-    static: './dist',
-    open: true,
-    compress: true,
-    port: 8564,
-    hot: true,
+    extensions: ["*", ".js", ".jsx"],
   },
-}
+  devServer: {
+    static: "./dist",
+    compress: true,
+    open: true,
+    hot: true,
+    port: 8564,
+  },
+  devtool: "inline-source-map",
+  plugins: [
+    new HtmlWebpackPlugin({
+      name: "index.html",
+      inject: false,
+      template: "./dist/index.html",
+    }),
+  ],
+};
