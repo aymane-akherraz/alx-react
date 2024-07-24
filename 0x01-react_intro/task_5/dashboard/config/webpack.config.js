@@ -4,7 +4,8 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
   output: {
-    filename: "bundle.js"
+    filename: "bundle.js",
+    path: path.resolve("./dist"),
   },
   module: {
     rules: [
@@ -23,7 +24,6 @@ module.exports = {
               mozjpeg: {
                 progressive: true,
               },
-              // optipng.enabled: false will disable optipng
               optipng: {
                 enabled: false,
               },
@@ -34,7 +34,6 @@ module.exports = {
               gifsicle: {
                 interlaced: false,
               },
-              // the webp option will enable WEBP
               webp: {
                 quality: 75
               }
