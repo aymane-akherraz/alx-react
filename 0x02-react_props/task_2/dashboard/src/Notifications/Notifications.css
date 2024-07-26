@@ -1,0 +1,18 @@
+div.Notifications {
+  position: relative;
+  border: 1px dashed;
+  padding: 1rem;
+}
+
+div.Notifications li[data-notification-type="default"]{
+  color: blue;
+}
+
+div.Notifications li[data-notification-type="urgent"]{
+  color: red;
+}
+
+div.Notifications button {
+  background-color: transparent;
+  border: none;
+}

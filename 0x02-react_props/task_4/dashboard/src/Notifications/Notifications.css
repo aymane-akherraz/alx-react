@@ -1,0 +1,26 @@
+div.menuItem {
+  position: absolute;
+  right: 0;
+  padding: 1rem;
+}
+div.Notifications {
+  position: absolute;
+  top: 3rem;
+  right: 1rem;
+  border: 1px dashed;
+  padding: 1rem;
+  width: 35%;
+}
+
+div.Notifications li[data-notification-type="default"]{
+  color: blue;
+}
+
+div.Notifications li[data-notification-type="urgent"]{
+  color: red;
+}
+
+div.Notifications button {
+  background-color: transparent;
+  border: none;
+}
