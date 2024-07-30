@@ -1,0 +1,11 @@
+#CourseList {
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+#CourseList thead tr:not(:first-child) th{
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+
+}
