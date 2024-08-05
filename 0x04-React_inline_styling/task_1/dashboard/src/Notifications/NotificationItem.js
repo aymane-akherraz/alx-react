@@ -2,16 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const NotificationItem = React.memo(({ type = 'default', html, value, id, markAsRead }) => {
+  const defaultStyle = {
+    color: 'blue'
+  }
+  const urgentStyle = {
+    color: 'red'
+  }
   return (
     html ? (
       <li
         data-notification-type={type}
+        style={type === 'default'? defaultStyle : urgentStyle}
         dangerouslySetInnerHTML={html}
         onClick={() => markAsRead(id)}
       />
     ) : (
       <li
         data-notification-type={type}
+        style={type === 'default'? defaultStyle : urgentStyle}
         onClick={() => markAsRead(id)}
       >
         {value}
