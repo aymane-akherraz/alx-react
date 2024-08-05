@@ -4,6 +4,7 @@ import close_icon from '../assets/close-icon.png'
 import NotificationItem from './NotificationItem';
 import PropTypes from 'prop-types';
 import NotificationItemShape from './NotificationItemShape';
+import './Notifications.css'
 
 class Notifications extends React.Component {
   constructor(props) {

@@ -3,6 +3,7 @@ import CourseListRow from "./CourseListRow";
 import PropTypes from 'prop-types';
 import { StyleSheet, css } from 'aphrodite';
 import CourseShape from './CourseShape';
+import './CourseList.css'
 
 const CourseList = ({ listCourses = []}) => {
   return ( 
@@ -20,12 +21,12 @@ const CourseList = ({ listCourses = []}) => {
           </tbody>
         </>
       ) : (
-        <tr>No course available yet</tr>
+        <CourseListRow textFirstCell="No course available yet" />
       )}
     </table>
   );
 }
- 
+
 CourseList.propTypes = {
   listCourses: PropTypes.arrayOf(CourseShape)
 }
