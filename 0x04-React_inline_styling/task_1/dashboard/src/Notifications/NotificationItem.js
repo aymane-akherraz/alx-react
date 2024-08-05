@@ -38,5 +38,4 @@ NotificationItem.propTypes = {
   markAsRead: PropTypes.func
 };
 
-
 export default NotificationItem;

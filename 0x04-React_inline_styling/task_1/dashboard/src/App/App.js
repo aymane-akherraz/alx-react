@@ -10,7 +10,6 @@ import { getLatestNotification } from '../utils/utils';
 import BodySectionWithMarginBottom from '../BodySection/BodySectionWithMarginBottom';
 import BodySection from '../BodySection/BodySection';
 
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -97,5 +96,5 @@ const styles = StyleSheet.create({
     borderTop: '3px solid #e1003c'
   }
 });
- 
+
 export default App;

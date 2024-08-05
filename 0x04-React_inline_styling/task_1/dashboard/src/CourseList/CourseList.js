@@ -3,7 +3,6 @@ import CourseListRow from "./CourseListRow";
 import PropTypes from 'prop-types';
 import { StyleSheet, css } from 'aphrodite';
 import CourseShape from './CourseShape';
-import './CourseList.css'
 
 const CourseList = ({ listCourses = []}) => {
   return ( 
@@ -34,8 +33,7 @@ CourseList.propTypes = {
 const styles = StyleSheet.create({
   courseList :{
     width: '100%',
-    border: '1px solid #ccc',
-    borderCollapse: 'collapse'
+    border: '1px solid #ccc'
   }
 });
 

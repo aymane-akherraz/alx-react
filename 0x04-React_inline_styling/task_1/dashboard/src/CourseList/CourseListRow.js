@@ -24,7 +24,7 @@ const CourseListRow = ({isHeader = false, textFirstCell, textSecondCell = null})
     </tr>
   );
 }
- 
+
 CourseListRow.propTypes = {
   isHeader: PropTypes.bool,
   textFirstCell: PropTypes.string.isRequired,

@@ -10,7 +10,7 @@ const BodySectionWithMarginBottom = ({ title, children }) => {
     </div>
   );
 }
- 
+
 BodySectionWithMarginBottom.propTypes = {
   title: PropTypes.string,
   children: PropTypes.oneOfType([
