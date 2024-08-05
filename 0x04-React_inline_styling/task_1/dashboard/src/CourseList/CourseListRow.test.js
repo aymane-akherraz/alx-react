@@ -3,6 +3,12 @@ import { shallow } from 'enzyme';
 import CourseListRow from './CourseListRow';
 
 describe('CourseListRow Component', () => {
+  beforeAll(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+  });
+  afterAll(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+  });
   it('isHeader is set to true', () => {
     let wrapper = shallow(<CourseListRow isHeader={true} textFirstCell="ES6"/>);
     const thElement = wrapper.find('th');
