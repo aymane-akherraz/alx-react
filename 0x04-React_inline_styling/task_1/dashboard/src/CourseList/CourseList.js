@@ -20,7 +20,7 @@ const CourseList = ({ listCourses = []}) => {
           </tbody>
         </>
       ) : (
-        <tr>No course available yet</tr>
+        <CourseListRow textFirstCell='No course available yet' />
       )}
     </table>
   );

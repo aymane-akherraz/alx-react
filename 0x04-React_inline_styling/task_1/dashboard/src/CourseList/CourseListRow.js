@@ -8,7 +8,7 @@ const CourseListRow = ({isHeader = false, textFirstCell, textSecondCell = null})
     <tr style={ isHeader? headerRowStyle : rowDefaultStyle }>
       {isHeader? (
         !textSecondCell ? (
-        <th colSpan={2}>{textFirstCell}</th> 
+        <th colSpan={2}>{textFirstCell}</th>
         ) : (
         <>
           <th>{textFirstCell}</th>
