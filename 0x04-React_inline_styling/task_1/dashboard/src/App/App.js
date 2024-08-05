@@ -76,7 +76,7 @@ class App extends React.Component {
                 </p>
               </BodySection>
           </div>
-          <div className="App-footer">
+          <div className={css(styles.AppFooter)}>
             <Footer />
           </div>
         </div>
@@ -88,6 +88,13 @@ class App extends React.Component {
 const styles = StyleSheet.create({
   AppBody: {
     padding: '2rem'
+  },
+  AppFooter: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+    textAlign: 'center',
+    borderTop: '3px solid #e1003c'
   }
 });
  
