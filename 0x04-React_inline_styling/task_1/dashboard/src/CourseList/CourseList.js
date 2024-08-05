@@ -34,6 +34,11 @@ const styles = StyleSheet.create({
   courseList :{
     width: '100%',
     border: '1px solid #ccc'
+  },
+  tr: {
+    "nth-child(2)": {
+      textAlign: "left",
+    },
   }
 });
 
