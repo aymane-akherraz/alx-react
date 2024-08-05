@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     padding: '2rem'
   },
   AppFooter: {
-    position: 'absolute',
+    position: 'fixed',
     bottom: 0,
     width: '100%',
     textAlign: 'center',

@@ -3,9 +3,13 @@ import { shallow } from 'enzyme';
 import Login from './Login'
 import { StyleSheetTestUtils } from 'aphrodite';
 
-// Suppress style injection
-StyleSheetTestUtils.suppressStyleInjection();
 describe('Login Component', () => {
+  beforeAll(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+  });
+  afterAll(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+  });
   it('renders without crashing', () => {
     shallow(<Login />);
   });

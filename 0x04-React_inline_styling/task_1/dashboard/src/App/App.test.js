@@ -8,9 +8,13 @@ import Footer from '../Footer/Footer';
 import CourseList from '../CourseList/CourseList';
 import { StyleSheetTestUtils } from 'aphrodite';
 
-// Suppress style injection
-StyleSheetTestUtils.suppressStyleInjection();
 describe('App Component', () => {
+  beforeAll(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+  });
+  afterAll(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+  });
   it('renders without crashing', () => {
     shallow(<App />);
   });

@@ -3,9 +3,13 @@ import { shallow } from 'enzyme';
 import Header from './Header'
 import { StyleSheetTestUtils } from 'aphrodite';
 
-// Suppress style injection
-StyleSheetTestUtils.suppressStyleInjection();
 describe('Header Component', () => {
+  beforeAll(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+  });
+  afterAll(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+  });
   it('renders without crashing', () => {
     shallow(<Header />);
   });

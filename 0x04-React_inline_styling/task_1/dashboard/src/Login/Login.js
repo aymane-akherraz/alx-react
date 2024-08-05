@@ -9,7 +9,7 @@ const Login = () => {
       <input className={css(styles.margin)} type="email" name="" id="email" />
       <label htmlFor='password'>Password: </label>
       <input className={css(styles.margin)} type="password" name="" id="password" />
-      <button className={css(styles.margin)}>OK</button>
+      <button>OK</button>
     </>
   );
 }

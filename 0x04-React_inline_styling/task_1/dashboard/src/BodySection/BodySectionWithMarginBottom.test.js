@@ -4,10 +4,13 @@ import BodySectionWithMarginBottom from './BodySectionWithMarginBottom';
 import BodySection from './BodySection';
 import { StyleSheetTestUtils } from 'aphrodite';
 
-// Suppress style injection
-StyleSheetTestUtils.suppressStyleInjection();
-
 describe('BodySectionWithMarginBottom Component', () => {
+  beforeAll(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+  });
+  afterAll(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+  });
   it('Renders correctly a BodySection component', () => {
     const wrapper = shallow(<BodySectionWithMarginBottom title="test title">
       <p>test children node</p>

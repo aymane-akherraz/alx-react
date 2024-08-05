@@ -34,7 +34,8 @@ CourseList.propTypes = {
 const styles = StyleSheet.create({
   courseList :{
     width: '100%',
-    border: '1px solid #ccc'
+    border: '1px solid #ccc',
+    borderCollapse: 'collapse'
   }
 });
 

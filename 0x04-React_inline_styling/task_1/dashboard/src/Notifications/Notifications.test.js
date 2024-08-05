@@ -5,9 +5,13 @@ import NotificationItem from './NotificationItem';
 import { getLatestNotification } from '../utils/utils';
 import { StyleSheetTestUtils } from 'aphrodite';
 
-// Suppress style injection
-StyleSheetTestUtils.suppressStyleInjection();
 describe('Notifications Component', () => {
+  beforeAll(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+  });
+  afterAll(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+  });
   const listNotifications = [
     { id: 1, type: "default", value: "New course available" },
     { id: 2, type: "urgent", value: "New resume available" },
