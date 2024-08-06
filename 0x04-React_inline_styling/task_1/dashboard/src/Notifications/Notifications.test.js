@@ -40,7 +40,7 @@ describe('Notifications Component', () => {
     const wrapper = shallow(<Notifications displayDrawer={true} listNotifications={listNotifications} />);
     const ulElement = wrapper.find('ul');
     const firstChild = ulElement.children().first();
-    expect(firstChild.html()).toEqual('<li data-notification-type="default">New course available</li>');
+    expect(firstChild.html()).toEqual('<li data-notification-type="default" style="color:blue">New course available</li>');
   });
   it('the menu item is being displayed when displayDrawer is false', () => {
     let wrapper = shallow(<Notifications />);
