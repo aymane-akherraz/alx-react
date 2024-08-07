@@ -75,7 +75,7 @@ class App extends React.Component {
                 </p>
               </BodySection>
           </div>
-          <div className={css(styles.AppFooter)}>
+          <div className={css(styles.footer)}>
             <Footer />
           </div>
         </div>
@@ -85,10 +85,14 @@ class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  body :{
+    margin: 0,
+    fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"
+  },
   AppBody: {
     padding: '2rem'
   },
-  AppFooter: {
+  footer: {
     position: 'fixed',
     bottom: 0,
     width: '100%',

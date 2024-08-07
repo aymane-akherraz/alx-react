@@ -4,7 +4,7 @@ import logo from '../assets/logo.jpg';
 
 const Header = () => {
   return ( 
-    <div className={css(styles.appHeader)}>
+    <div className={css(styles.header)}>
       <img className={css(styles.logo)} src={logo} alt='' />
       <h1 className={css(styles.title)}>School dashboard</h1>
     </div>
@@ -12,7 +12,7 @@ const Header = () => {
 }
 
 const styles = StyleSheet.create({
-  appHeader :{
+  header :{
     borderBottom: '3px solid #e1003c',
     display: 'flex',
     alignItems: 'center',
