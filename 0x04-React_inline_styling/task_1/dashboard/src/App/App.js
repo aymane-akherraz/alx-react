@@ -57,7 +57,7 @@ class App extends React.Component {
         <Notifications listNotifications={this.listNotifications} />
         <div className="App">
           <Header />
-          <div className={css(styles.AppBody)}>
+          <div className={css(styles.body)}>
             { isLoggedIn? (
               <BodySectionWithMarginBottom title={"Course list"}>
                 <CourseList listCourses={this.listCourses}/>
@@ -85,11 +85,7 @@ class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  body :{
-    margin: 0,
-    fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"
-  },
-  AppBody: {
+  body: {
     padding: '2rem'
   },
   footer: {
