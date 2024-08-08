@@ -18,20 +18,6 @@ class Notifications extends React.Component {
     );
   }
 
-  static defaultProps = {
-    displayDrawer: false,
-    listNotifications: [],
-    handleDisplayDrawer: () => {},
-    handleHideDrawer: () => {}
-  }
-
-  static propTypes = {
-    displayDrawer: PropTypes.bool,
-    listNotifications: PropTypes.arrayOf(NotificationItemShape),
-    handleDisplayDrawer: PropTypes.func,
-    handleHideDrawer: PropTypes.func
-  }
-
   markAsRead(id) {
     console.log(`Notification ${id} has been marked as read`);
   }
@@ -135,5 +121,19 @@ const styles = StyleSheet.create({
     display: 'none'
   }
 });
+
+Notifications.propTypes = {
+	displayDrawer: PropTypes.bool,
+	listNotifications: PropTypes.arrayOf(NotificationItemShape),
+	handleDisplayDrawer: PropTypes.func,
+	handleHideDrawer: PropTypes.func,
+};
+
+Notifications.defaultProps = {
+	displayDrawer: false,
+  listNotifications: [],
+  handleDisplayDrawer: () => {},
+  handleHideDrawer: () => {}
+};
 
 export default Notifications;
