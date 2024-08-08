@@ -42,7 +42,10 @@ class Notifications extends React.Component {
               })
             }
             </ul>
-          <button className={css(styles.btn)} aria-label='Close' onClick={handleHideDrawer}>
+          <button className={css(styles.btn)} aria-label='Close' onClick={() => {
+            console.log('Close button has been clicked');
+            handleHideDrawer();
+          }}>
             <img src={close_icon} alt='' />
           </button>
           </div>
@@ -131,9 +134,6 @@ Notifications.propTypes = {
 
 Notifications.defaultProps = {
 	displayDrawer: false,
-  listNotifications: [],
-  handleDisplayDrawer: () => {},
-  handleHideDrawer: () => {}
 };
 
 export default Notifications;
