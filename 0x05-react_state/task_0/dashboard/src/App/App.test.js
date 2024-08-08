@@ -60,11 +60,15 @@ describe('App Component', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.state('displayDrawer')).toEqual(false);
   });
-  it('Verify that after calling handleDisplayDrawer and handleHideDrawer updates the state', () => {
+  it('Verify that after calling handleDisplayDrawer the state changes to true', () => {
     const wrapper = shallow(<App />);
     const instance = wrapper.instance();
     instance.handleDisplayDrawer();
     expect(wrapper.state('displayDrawer')).toEqual(true);
+  });
+  it('Verify that after calling handleHideDrawer the state changes to false', () => {
+    const wrapper = shallow(<App />);
+    const instance = wrapper.instance();
     instance.handleHideDrawer();
     expect(wrapper.state('displayDrawer')).toEqual(false);
   });
