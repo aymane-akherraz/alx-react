@@ -1,4 +1,4 @@
-const { Seq } = require('immutable');
+import { Seq } from 'immutable';
 
 export const printBestStudents = (grades) => {
   const BestStudents = Seq(grades)
