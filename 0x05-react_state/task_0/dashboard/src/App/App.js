@@ -55,7 +55,7 @@ class App extends React.Component {
 
   render() {
     const { isLoggedIn } = this.props;
-    const  { displayDrawer } = this.state;
+    const { displayDrawer } = this.state;
     return (
       <>
         <Notifications displayDrawer={displayDrawer} handleDisplayDrawer={this.handleDisplayDrawer} handleHideDrawer={this.handleHideDrawer} listNotifications={this.listNotifications} />
