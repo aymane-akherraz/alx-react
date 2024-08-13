@@ -13,7 +13,7 @@ import BodySection from '../BodySection/BodySection';
 
 class App extends React.Component {
   constructor(props) {
-    super(props);
+    super(props);    
 
     this.state = { displayDrawer: false };
     this.handleDisplayDrawer = this.handleDisplayDrawer.bind(this);
@@ -54,10 +54,10 @@ class App extends React.Component {
   }
 
   render() {
-    const { isLoggedIn } = this.props;
+    const { isLoggedIn, displayDrawer } = this.props;
     return (
       <>
-        <Notifications displayDrawer={this.state.displayDrawer} handleDisplayDrawer={this.handleDisplayDrawer} handleHideDrawer={this.handleHideDrawer} listNotifications={this.listNotifications} />
+        <Notifications displayDrawer={displayDrawer} handleDisplayDrawer={this.handleDisplayDrawer} handleHideDrawer={this.handleHideDrawer} listNotifications={this.listNotifications} />
         <div className="App">
           <Header />
           <div className={css(styles.AppBody)}>
