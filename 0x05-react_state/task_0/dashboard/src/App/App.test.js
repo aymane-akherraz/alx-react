@@ -68,8 +68,9 @@ describe('App Component', () => {
   });
   it('Verify that after calling handleHideDrawer the state changes to false', () => {
     const wrapper = shallow(<App />);
-    const instance = wrapper.instance();
-    instance.handleHideDrawer();
+    wrapper.instance().handleDisplayDrawer();
+    expect(wrapper.state().displayDrawer).toEqual(true);
+    wrapper.instance().handleHideDrawer();
     expect(wrapper.state('displayDrawer')).toEqual(false);
   });
 });
